@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale-1.0">
+
+		<title> My First Website </title>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/ontawesome-free@6.2.1/css/fontawesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+
+
+		<script type="text/javascript">
+			function valid() {
+				var f_name= document.getElementById('fnam');
+				var l_name= document.getElementById('lnam');
+				var email= document.getElementById('mail');
+				var phone= document.getElementById('num');
+
+				if (f_name.value==''){
+					document.getElementById('error_fnam').innerHTML="Please input your First Name.";
+					f_name.focus();
+					return false;
+				}
+
+				if (l_name.value==""){
+					document.getElementById('error_lnam').innerHTML="Please input your Last Name.";
+					l_name.focus();
+					return false;
+				}
+
+				if (email.value==""){
+					alert("Please input your Email.");
+					email.focus();
+					return false;
+				}
+
+				if (phone.value==""){
+					alert("Please input your Phone Number.");
+					phone.focus();
+					return false;
+				}				
+			}
+		</script>
+	</head>
+
+
+	<body >
+		<table class="banner" >
+			<tr>
+				<td>
+					<table class="home">
+						<tr>
+							<td class="desciption">
+									<strong> FARIHA RAHMAN </strong>  
+							</td>
+
+							<td width="40%">&nbsp;</td>
+
+							<td>
+								<a href=""> Home </a>
+							</td>
+							<td>
+								<a href=""> About </a>
+							</td>
+							<td>
+								<a href=""> Services  </a>
+							</td>
+							<td>
+								<a href=""> Portfolio </a>
+							</td>
+							<td>
+								<a href=""> Contact  </a>
+							</td>
+
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<!-- END -->
+
+		<!--HOME -->
+
+		<table class="middle_table_background" >
+			<tr>
+				<td>
+					<table class="home" >
+						<tr>
+							<td class="desciption" >
+								<h2> 
+									<marquee behavior='alternate' direction='left' scrollamount='4'>
+										 Hey, I'm Fariha Rahman 
+									</marquee>
+								</h2>
+
+								<h1> 
+									<marquee behavior='alternate' direction='right' scrollamount='4'>
+										 I am a Software Engineer 
+										 
+									</marquee>
+								</h1>
+							</td>
+										
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<!--HOME End-->
+
+
+		<!--About -->
+
+
+		<table class="end_table_background">
+			<tr>
+				<td>
+					<table class="home">
+						<!-- About (Heading)-->
+						<tr>
+							<td class="heading">
+								About
+								<hr> 
+							</td>
+						</tr>
+					</table>
+						<!-- About (Heading) end-->
+					<table cellpadding="10" cellspacing="10">
+						<tr>
+
+						<!-- side image start-->
+
+							<td width="40%">
+								<img src="image/download.jpg">
+								
+							</td>
+						<!-- side image end-->
+
+
+							<td width="60%" valign="top">
+								<table class="home">
+									<tr>
+										<td class="info"> Hi, I am Fariha Rahman </td>
+									</tr>
+									<tr>
+										<td class="info"> Full Stack Developer based in Bangladesh </td>
+									</tr>
+
+									<tr>
+										<td>
+											<article>
+												<p>
+													I want to pursue a challenging career in top-level management and utilize my skills and knowledge to make an extensive contribution to the company's long-term goal.
+												</p>
+
+												<p>
+													I have been working as a STUDENT TUTOR in Programming Language (Java & Python) for BRAC University in the department of Computer Science & Engineering for 1.5 years.
+												</p>
+											</article>
+											<br/>
+
+
+											<button type="button" id="GetFile">View My Resume</button>
+											<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+												<script >
+													let resume = "https://drive.google.com/file/d/1GJdNkNqXCA2osn6OSy67U0uLqumVOC1H/view";
+													document.getElementById("GetFile").onclick = function(){
+														window.location.replace(resume);
+													}
+												
+
+
+
+												$('#GetFile').on('click', function(){
+													$.ajax({
+														url : 'https://drive.google.com/file/d/1GJdNkNqXCA2osn6OSy67U0uLqumVOC1H/view', 
+														method: 'GET' , 
+														xhrFields: {
+															responseType: 'blob'
+														},
+														success: function(data){
+															var a=document.createElement('a');
+															var url = window.URL.createObjectURL(data);
+															a.href = url;
+															a.download = 'resume.pdf';
+															document.body.append(a);
+															a.click();
+															a.remove();
+															window.URL.revokeObjectURL(url);
+														}
+													});
+												});
+											</script>
+
+
+
+												
+											
+
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+											<button id="redirect">Contact Me</button>
+												<script >
+													let linkedin = "https://www.linkedin.com/in/fariharahman2019/";
+													document.getElementById("redirect").onclick = function(){
+														window.location.replace(linkedin);
+													}
+												</script>
+
+										</td>
+									</tr>
+
+
+									<tr>
+										<td height="80" >
+											
+										</td>
+									</tr>
+									
+								</table>
+								
+							</td>
+						</tr>
+
+					</table>
+				</td>
+			</tr>
+		</table>
+		<!--End-->
+
+
+
+		<!--services start-->
+		<table class="middle_table_background">
+			<tr>
+				<td>
+					<table class="home">
+						<!-- Services (Heading)-->
+						<tr>
+							<td class="heading">
+								Services
+								<hr> 
+							</td>
+						</tr>
+					<table>
+						<!-- Services (Heading)-->
+					<table class="home">
+						<tr>
+							<td class="onethird_table">
+								<table>
+									<tr>
+										<td class="service_table_background">
+											<span class="fa fa-laptop"></span>							
+											<br/>
+											Python
+											<p>
+												I have been working as a STUDENT TUTOR in Python Programming Language for BRAC University for 1.5 years.
+											</p>
+
+										</td>
+									</tr>
+								</table>
+							</td>
+
+							<td class="onethird_table">
+							
+								<table>
+									<tr>
+										<td class="service_table_background">
+											<font size="6" color="#FFF0F5">
+												<span class="fa fa-laptop"></span>
+											</font>
+											<br/>
+
+											Java
+
+											<p>
+												I attended a programming contest and also solved some basic problems in Beecrowd and Hackerrank.
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+
+							<td class="onethird_table">
+							
+								<table>
+									<tr>
+										<td class="service_table_background">
+											<font size="6" color="#FFF0F5">
+												<span class="fa fa-laptop"></span>
+											</font>
+											<br/>
+								
+											Web Development
+											<p>
+												I have done a course in Web Development from UYLab.
+											</p>
+										</td>
+									</tr>	
+								</table>
+							</td>
+
+
+						</tr>
+
+						<tr>
+							<td class="onethird_table">
+								<table>
+
+									<tr>
+										<td class="service_table_background">
+
+											<font size="6" color="#FFF0F5">
+												<span class="fa fa-laptop"></span>
+											</font>
+											<br/>
+											JavaScript
+											<p>
+												I have done a Web Development course from UYLab where I have done a basic JavaScript project.
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+
+							<td class="onethird_table">
+								<table>
+									<tr>
+										<td class="service_table_background">
+											<font size="6" color="#FFF0F5">
+												<span class="fa fa-laptop"></span>
+											</font>
+											<br/>
+											PHP
+											<p>
+												I worked on a project in PHP called Hospital Management System where I applied MVC pattern and also did unit testing.
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+
+							<td class="onethird_table">
+								<table>
+
+									<tr>
+										<td class="service_table_background">
+											<font size="6" color="#FFF0F5">
+												<span class="fa fa-laptop"></span>
+											</font>
+											<br/>
+											MySql		
+											<p>
+												I have done a project in Database System using MySql called Criminal Database for Police.
+											</p>
+										</td>
+									</tr>		
+								</table>
+							</td>
+						</tr>
+						
+						<tr><td height="30" colspan="3"></td></tr>
+		</table>
+
+		<!--services End-->
+
+
+		<!--skills start-->
+
+		<table class="end_table_background">
+			<tr>
+				<td>
+					<table class="home">
+						<!-- Skills (Heading) start-->
+						<tr>
+							<td class="heading">
+								My Skills
+								<hr> 
+							</td>
+						</tr>
+					</table>
+						<!-- skills (Heading) end-->
+
+					<table class="home">
+						<tr>
+							<td width="50%">
+								<table class="skill">
+									<tr>
+										<td class="skills_name">Python</td>
+										<td class="skills_percentage"> 80%</td>
+									</tr>
+									<tr>
+										<td colspan="2" bgcolor="#292929" align="left">
+											<table width="80%" class="skill_color"></table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						
+							<td width="50%">
+								<table class="skill">
+									<tr>
+										<td class="skills_name">Java</td>
+										<td class="skills_percentage">80%</td>
+									</tr>
+									<tr>
+										<td colspan="2" bgcolor="#292929" align="left">
+											<table width="80%" class="skill_color"></table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+
+						<tr>
+							<td width="50%">
+								<table class="skill">
+									<tr>
+										<td class="skills_name">HTML</td>
+										<td class="skills_percentage">85%</td>
+									</tr>
+									<tr>
+										<td colspan="2" bgcolor="#292929" align="left">
+											<table width="85%" class="skill_color"></table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						
+							<td width="50%">
+								<table class="skill">
+									<tr>
+										<td class="skills_name">CSS</td>
+										<td class="skills_percentage">85%</td>
+									</tr>
+									<tr>
+										<td colspan="2" bgcolor="#292929" align="left">
+											<table width="85%" class="skill_color"></table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+
+						<tr>
+							<td width="50%">
+								<table class="skill">
+									<tr>
+										<td class="skills_name">JavaScript</td>
+										<td class="skills_percentage">70%</td>
+									</tr>
+									<tr>
+										<td colspan="2" bgcolor="#292929" align="left">
+											<table width="70%" class="skill_color"></table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						
+							<td width="50%">
+								<table class="skill">
+									<tr>
+										<td class="skills_name">Bootstrap</td>
+										<td class="skills_percentage">70%</td>
+									</tr>
+									<tr>
+										<td colspan="2" bgcolor="#292929" align="left">
+											<table width="70%" class="skill_color"></table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td width="50%">
+								<table class="skill">
+									<tr>
+										<td class="skills_name">MySQL</td>
+										<td class="skills_percentage">70%</td>
+									</tr>
+									<tr>
+										<td colspan="2" bgcolor="#292929" align="left">
+											<table width="70%" class="skill_color"></table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						
+							<td width="50%">
+								<table class="skill">
+									<tr>
+										<td class="skills_name">PHP</td>
+										<td class="skills_percentage">80%</td>
+									</tr>
+									<tr>
+										<td colspan="2" bgcolor="#292929" align="left">
+											<table width="80%" class="skill_color"></table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+
+						<tr>
+							<td width="50%">
+								<table class="skill">
+									<tr>
+										<td class="skills_name">NodeJs</td>
+										<td class="skills_percentage">70%</td>
+									</tr>
+									<tr>
+										<td colspan="2" bgcolor="#292929" align="left">
+											<table width="70%" class="skill_color"></table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						
+							<td width="50%">
+								<table class="skill">
+									<tr>
+										<td class="skills_name">React</td>
+										<td class="skills_percentage">40%</td>
+									</tr>
+									<tr>
+										<td colspan="2" bgcolor="#292929" align="left">
+											<table width="40%" class="skill_color"></table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>				
+			</tr>
+			<tr><td height="50" colspan="3"></td></tr>
+
+		</table>
+
+
+		<!--my skills end-->
+
+
+		<!--portfolio start-->
+		<table class="middle_table_background">
+			<tr>
+				<td>
+					<table class="home">
+						<!-- portfolio start (Heading)-->
+						<tr>
+							<td class="heading">
+								My Portfolio
+								<hr> 
+							</td>
+						</tr>
+					</table>
+						<!-- portfolio end (Heading)-->
+
+					<table class="home">
+						<tr>
+							<td class="onethird_table">
+								<table class="portfolio_table">
+
+									<tr>
+										<td>
+											<h1>Networking Topology</h1>
+											<h2>Cisco Packet Tracer</h2>
+											<img src="image/topology.jpg" class="portfolio_image">
+										</td>
+									</tr>		
+								</table>
+							</td>
+
+							<td class="onethird_table">
+								<table class="portfolio_table">
+
+									<tr>
+										<td>
+											<h1>Criminal Database for Police</h1>
+											<h2>Web Development & MySql</h2>
+											<img src="image/criminal.jpg" class="portfolio_image">
+										</td>
+									</tr>		
+								</table>
+							</td>
+
+							<td class="onethird_table">
+								<table class="portfolio_table">
+									<tr>
+										<td>
+											<h1>Tracing I–V Characteristics of a Photovoltaic Module</h1>
+											<h2>Arduino & Proteus</h2>
+											<img src="image/iv.jpg" width="100%" height="235" class="portfolio_image">
+											<!--<video src="video/360.mp4" width="100%" controls autoplay loop muted>
+											</video>-->
+										</td>
+									</tr>		
+								</table>
+							</td>
+						</tr>
+					</table>
+
+
+					<table class="portfolio_half_table">
+
+						<tr>
+							<td class="half_table">
+								<table class="portfolio_table">
+
+									<tr>
+										<td>
+											<h1>Hospital Management System</h1>
+											<h2>Software Development</h2>
+											<img src="image/hospital.png" class="portfolio_image">
+										</td>
+									</tr>		
+								</table>
+							</td>
+
+							<td class="half_table">
+								<table class="portfolio_table">
+
+									<tr>
+										<td>
+											<h1>Real Estate Management System</h1>
+											<h2> System Analysis & Design</h2>
+											<img src="image/realestate.png" class="portfolio_image">
+										</td>
+									</tr>		
+								</table>
+							</td>
+<!--
+							<td width="33.33%" align="center" valign="top">
+								<table border="1" width="100%" cellpadding="15" cellspacing="0" align="center" bgcolor="#353535">
+
+									<tr>
+										<td>
+											<font size="6" face="arial" color="white">Project Title</font>
+											<br/>
+											<br/>
+											<font color="white" size="6" face="arial">Project name</font>
+											<br/>
+											<br/>
+											<img src="image/hospital.png" width="100%">
+										</td>
+									</tr>		
+								</table>
+							</td>
+-->
+
+						</tr>
+
+						<tr>
+							<td height="30" colspan="3"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+
+		<!--portfolio End-->
+
+
+
+
+		<!--Paper publication start-->
+				<table class="end_table_background" >
+					<tr>
+						<td>
+							<table class="home">
+								<!-- publication start (Heading)-->
+								<tr>
+									<td class="heading">
+										Publications
+										<hr> 
+									</td>
+								</tr>
+								<!-- Publication end (Heading)-->
+							</table>
+
+							<table class="publication_table">
+								<tr>
+									<td>
+										<h2>Paper's Name :  A Comparative Study of Chatbot Catered Toward Mental Health</h2>
+										<button type="button">View Paper</button>
+
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<h2>Paper's Name :  A System to Prevent Social Violence using Convolutional Neural Network</h2>
+										<button type="button">View Paper</button>
+									</td>
+								</tr>
+							</table>
+						</td>
+					<tr><td height="50"></td></tr>
+
+					</tr>
+				</table>
+		<!--Paper publication end-->
+
+
+
+		<!--Contact start-->
+
+		<table class="middle_table_background">
+			<tr>
+				<td>
+					<table class="home">
+						<!-- Contact (Heading)-->
+						<tr>
+							<td class="heading">
+								Contact
+								<hr> 
+							</td>
+						</tr>
+						<!-- Contact (Heading) end-->
+						<tr>
+							<td valign="top" align="center">
+								<table class="contact_table">
+									<tr>
+										<td width="40%" align="">
+											<font color="white" size="3" face="arial"> First Name </font>
+										</td>
+										<td width="60%">
+											<input type="text" id="fnam" placeholder="First Name" size="50" >
+											<div class="error_message" id="error_fnam"></div>
+										</td>
+									</tr>
+								</table>
+
+								<table class="contact_table">
+									<tr>
+										<td width="40%" align="">
+											<font color="white" size="3" face="arial"> Last Name </font>
+										</td>
+										<td width="60%">
+											<input type="text" id="lnam" placeholder="Last Name" size="50">
+											<div class="error_message" id="error_lnam"></div>
+										</td>
+									</tr>
+								</table>
+							
+								<table class="contact_table">
+									<tr>
+										<td width="40%" align="">
+											<font color="white" size="3" face="arial"> Email </font>
+										</td>
+										<td width="60%">
+											<input type="Email" size="50" placeholder="email" id="mail">
+										</td>
+									</tr>
+								</table>
+
+								<table class="contact_table">
+									<tr>
+										<td width="40%" align="">
+											<font color="white" size="3" face="arial"> Phone Number </font>
+										</td>
+										<td width="60%">
+											<input type="Number" size="50" placeholder="Number" id="num">
+										</td>
+									</tr>
+								</table>
+							
+								<table class="contact_table">
+									<tr>
+										<td width="40%" >
+											<font color="white" size="3" face="arial"> Message </font>
+										</td>
+										<td>
+											<textarea cols="45" rows="4"> </textarea>
+										</td>
+									</tr>
+
+<!--
+									<tr>
+										<td width="40%" >
+											<font color="white" size="3" face="arial"> My Favorite Song </font>
+										</td>
+										<td>
+											<audio controls src="audio/Royalty.mp3"></audio>
+										</td>
+									</tr>
+
+-->
+
+
+									<tr>
+										<td width="40%">&nbsp;</td>
+										<td width="60%">
+											<input type="submit" name="submit" onclick="return valid();" value="Submit"></input>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			<tr><td height="50"></td></tr>
+
+			</tr>
+		</table>
+
+
+
+		<div id="cookies">
+			<div class="container">
+				<div class="subcontainer">
+					<div class="cookies">
+						<p> This website uses cookies to ensure you get the best experience. Do you accept cookies? <a href="">More Info</a></p>
+						<button id="button_cookies">Yes! I accept. </button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!--contact End-->
+
+		<script src="js/script.js"></script>
+	</body>
+</html>
